@@ -1,0 +1,175 @@
+<html>
+<head>
+<style>
+	.container {
+	    overflow: hidden;
+	    background-color: black;
+	    font-family: Arial;
+	}
+
+	.container a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	}
+
+	.dropdown {
+    float: left;
+    overflow: hidden;
+	}
+
+	.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+	}
+
+	.container a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+	}
+
+	.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+	}
+
+	.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+	}
+
+	.dropdown-content a:hover {
+    background-color: #ddd;
+	}
+
+	.dropdown:hover .dropdown-content {
+    display: block;
+	}
+    .title
+    {
+    font-size:70px;
+    color:white;
+    background-color:black;
+    text-align:center;
+    position:relative;
+    padding:25px;
+    }
+    .sidebar
+    { 
+    width: 190px;
+    padding: 5px 5px 5px;
+    text-decoration: none;
+    color:white;
+    float:right;
+    }
+   .sidebar a
+   {
+    text-align:center;
+    background-color:black;
+    display:inline;
+    padding:5px 10px;
+    color:white;
+    text-decoration:none;
+    float:right;
+   }    
+    .cart
+    {
+    background-color:black;
+    color:white;
+    padding:5px 5px;
+    text-align:center;
+    text-decoration:none;
+    }
+
+    .sidebar li a, .sidebar li a:hover
+    { 
+    min-width:150px;
+    background-color:black;
+    padding:5px;
+    display: inline-block;
+    color:white;
+    text-decoration: none;
+    text-align:center;
+    }
+
+</style>
+<script language="javascript" src="cookiemngr.js"></script>
+</head>
+
+<body style="min-width:990px;">
+<div class="title">
+iMac
+</div>
+<div class="container">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Computers</button>
+            <div class="dropdown-content">
+            <a href="dellxps15.html">Dell XPS 15</a>
+            <a href="imac.html">iMac</a>
+            <a href="surfacelaptop.html">Surface Laptop</a>
+            </div>s
+        </div> 
+
+        <div class="dropdown">
+            <button class="dropbtn">Music</button>
+            <div class="dropdown-content">
+            <a href="bose.html">Bose Headphones</a>
+            <a href="yamaha.html">Yamaha Speakers</a>
+            <a href="audiotechnica.html">Audio Technica Turntable</a>
+            </div>
+        </div> 
+
+        <div class="dropdown">
+            <button class="dropbtn">Gaming</button>
+            <div class="dropdown-content">
+            <a href="xboxone.html">Xbox One</a>
+            <a href="ps4.html">PS4</a>
+            <a href="nintendoswitch.html">Nintendo Switch</a>
+            </div>
+        </div>
+        <a href="aboutus.html">About us</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="login.php">Login</a>
+        <a href="registration.php">Register</a>
+</div>
+<p style="text-align:center; color:black;"> <img src="imac.jpg" width="480" height="300" ></p>
+<p style="text-align:left; color:black; font-size:25px;"> 
+<p style="text-align:left; color:black; font-size:25px;"
+<span style="float:right;text-align:left;padding:.5em;">
+          <a href="#" onclick="alert('iMac ADDED TO CART');setCookie('imac','1',30);"class="cart">Add to Cart</a>
+          &nbsp;&nbsp;<a href="cart.html"class="cart">Goto Cart</a></span>
+
+<br>
+<b>Price: $1,500
+<br>
+Available: 25
+<br>
+Model:IMC2017</b>
+<br>
+    <p style="color:black;text-align:left;font-size:20px;background-color:lightgray;">Description: The idea behind iMac has never wavered: to craft the ultimate desktop experience. The best display, paired with high-performance processors, graphics, and storage, all within an incredibly thin, seamless enclosure. And that commitment continues with the new 21.5 inch iMac with Retina 4K display. Like the revolutionary 27 inch 5K model, it delivers such spectacular image quality that everything else around you seems to disappear. Adding up to the most immersive iMac experience yet — and another big, beautiful step forward.
+    </p>
+</p>
+</body>
+
+
+
+
+
+
+
+</html>

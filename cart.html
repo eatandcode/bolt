@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+td{text-align:right;}
+</style>
+<script language="javascript" src="cookiemngr.js" ></script>
+<script type="text/javascript" src="pricing.js"></script>
+<script type="text/javascript">
+function cart()
+{
+	var total=0;
+	for(var i=0;i<items.length;i++)
+	{
+		qty=parseInt(getCookie(items[i]));
+		//alert(parseInt(qty));
+		if(!isNaN(qty))
+		{   
+			var itemqtyname=items[i]+"qty";
+			var cost=prices[i];
+			subtotal=prices[i]*qty;
+			total=total+subtotal;
+			document.writeln("<tr><td>",items[i],"</td><td>");
+			document.writeln("<input type='text' value='",qty,"' id='",itemqtyname,"' maxlength='2' size='2'/>");
+			document.writeln("<input type='button' value='update' id='",items[i],"' onclick='updateqty(this)';/>");
+			document.writeln("</td><td>");
+			document.writeln(cost);
+			document.writeln("</td><td>");
+			document.writeln(subtotal);
+			document.writeln("</td></tr>");
+		}
+   }
+   if(total !=0 ) 
+   {   
+	document.writeln("<tr><td colspan='3' >SUBTOTAL</td><td>");
+	document.writeln(total);
+	document.writeln("</td></tr>"); 
+   } 
+}
+
+function updateqty(item)
+{
+	var days=30;
+	itemid=item.id+"qty"
+	var newqty=parseInt(document.getElementById(itemid).value);
+	if (newqty==0) days=-1;
+	alert(newqty+":"+days);
+	setCookie(item.id,newqty,days);
+	location.reload();
+	location.href="cart.html";
+} 
+</script>
+
+<p style="font-size: 30px; text-align:center;min-width:960px;margin: 0 auto;"><img src="bolt.jpg" ></p>
+<title>BOLT</title>
+<style>
+  .container {
+      overflow: hidden;
+      background-color: black;
+      font-family: Arial;
+  }
+
+  .container a {
+    float: left;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 18px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    text-align: center;
+    background-color: inherit;
+  }
+
+  .container a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .sidebar
+  { 
+    display:inline;
+    min-width:75px;
+    min-height:5px;
+    background-color:black;
+    text-decoration: none;
+    color:white;
+    padding:5px;
+    float:right;
+   }
+   .sidebar a
+   {
+    padding:5px 10px;
+    color:white;
+    text-decoration:none;
+    float:right;
+   }
+
+  .sidebar ul
+  { 
+    background-color:black;
+   padding: 4px; 
+   margin: 4px;
+   text-decoration: none;
+   color:white;}
+
+  .sidebar li
+  { 
+    display:inline-block;
+    background-color:black;
+    list-style: none; 
+   padding: 5px;
+   text-decoration: none; 
+   color:black;
+  }
+
+  .sidebar li a, .sidebar li a:hover
+  { padding: 0 0 0 15px;
+   display: block;
+   background-color: black;
+   color:white;
+   text-decoration: none;
+  }
+  .btn
+  {
+    display:inline;
+    background-color:black;
+    float: left;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    padding: 10px 12px;
+    text-decoration: none;
+  }
+
+  
+</style>
+
+<style type="text/css">
+table,td,input[type="button"],input[type="text"]{border:solid black 2px;font-size:small;}
+.division{border:solid black 2px;background-color:#CCCCCC;margin:2px;padding:1px;font-size:small;}
+th{text-align:center;background:black; color:white;padding:4px;}
+div.v0{ width:100%;}
+div.v1{ width:50%; margin:0px auto; background-color:#EEEEEE;}
+
+span{
+  width: 100%;
+ float: left;
+ margin-bottom: .5%;
+}
+</style>
+
+
+</head>
+    
+<body style="background-color: white;padding:50px; min-width:960px;margin: 0 auto;">
+<div class="container" >
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Computers</button>
+            <div class="dropdown-content">
+            <a href="dellxps15.html">Dell XPS 15</a>
+            <a href="imac.html">iMac</a>
+            <a href="surfacelaptop.html">Surface Laptop</a>
+            </div>s
+        </div> 
+
+        <div class="dropdown">
+            <button class="dropbtn">Music</button>
+            <div class="dropdown-content">
+            <a href="bose.html">Bose Headphones</a>
+            <a href="yamaha.html">Yamaha Speakers</a>
+            <a href="audiotechnica.html">Audio Technica Turntable</a>
+            </div>
+        </div> 
+
+        <div class="dropdown">
+            <button class="dropbtn">Gaming</button>
+            <div class="dropdown-content">
+            <a href="xboxone.html">Xbox One</a>
+            <a href="ps4.html">PS4</a>
+            <a href="nintendoswitch.html">Nintendo Switch</a>
+            </div>
+        </div>
+        <a href="aboutus.html">About us</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="login.php" >Login</a>
+        <a href="registration.php">Register</a>
+</div>
+</br>
+
+<table>
+  <span><a href="index.html" class="btn">Back to Shopping</a>&nbsp;<a href="checkout.html"class="btn">Checkout</a></span>
+<span><tr><td>NAME</td><td>QTY</td><td>COST</td><td>SUBTOTAL</td></tr>
+</span>
+<script type="text/javascript">
+cart();
+</script>
+
+</table>
+ 
+
+</body>
+    
+</html>

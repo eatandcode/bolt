@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>BOLT</title>
+<style>
+  .container {
+      overflow: hidden;
+      background-color: black;
+      font-family: Arial;
+  }
+
+  .container a {
+    float: left;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 18px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    text-align: center;
+    background-color: inherit;
+  }
+
+  .container a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+   .sidebar
+    { 
+    text-align: center;
+    float:right;
+    background-color:black;
+    width: 150px;
+    padding: 5px 5px 5px;
+    text-decoration: none;
+    color:white;
+    }
+
+   .sidebar a
+   {
+    text-align:center;
+    background-color:black;
+    display:inline;
+    padding:5px 10px;
+    color:white;
+    text-decoration:none;
+    float:right;
+   }
+  .sidebar li a, .sidebar li a:hover
+  { 
+    min-width:150px;
+    background-color:black;
+    padding:5px;
+    display: inline-block;
+    color:white;
+    text-decoration: none;
+    text-align:center;
+  }
+  .title
+  {
+    font-size:70px;
+    color:white;
+    background-color:inherit;
+    text-align:center;
+    position:relative;
+    padding:25px;
+  }
+  .index:hover 
+  {
+    opacity:0.5;
+    
+  }
+  img:hover
+  {
+    background-color:black;
+  }
+  .btn
+  {
+    display:inline-block;
+    background-color:black;
+    width:60px;
+    height:20px;
+    text-align:center;
+    color:white;
+    text-decoration:none;
+    padding:5px 5px 5px;
+  }
+
+</style>
+</head>
+    
+<body style="background-color: white;padding:50px; min-width:990px;margin: 0 auto;">
+<div class="title"><img src="bolt.jpg" >
+</div>
+<p>
+<a href="cart.html"><img src="cart.jpg" width="50px" height="50px" style="text-align:left"></a>
+<a href="logoff.php" style="text-align:right;font-size:20px;background-color:black;border-color:black;text-decoration:none;border-radius: 10%;padding:5px;color:white;">Logoff</a>
+<div class="container" style="float:center; ">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Computers</button>
+            <div class="dropdown-content">
+            <a href="dellxps15.html">Dell XPS 15</a>
+            <a href="imac.html">iMac</a>
+            <a href="surfacelaptop.html">Surface Laptop</a>
+            </div>s
+        </div> 
+
+        <div class="dropdown">
+            <button class="dropbtn">Music</button>
+            <div class="dropdown-content">
+            <a href="bose.html">Bose Headphones</a>
+            <a href="yamaha.html">Yamaha Speakers</a>
+            <a href="audiotechnica.html">Audio Technica Turntable</a>
+            </div>
+        </div> 
+
+        <div class="dropdown">
+            <button class="dropbtn">Gaming</button>
+            <div class="dropdown-content">
+            <a href="xboxone.html">Xbox One</a>
+            <a href="ps4.html">PS4</a>
+            <a href="nintendoswitch.html">Nintendo Switch</a>
+            </div>
+        </div>
+        <a href="aboutus.html">About us</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="login.php">Login</a>
+        <a href="registration.php">Register</a>
+</div>
+<div class="index">
+  <p style="float:left; color:black;"><img src="dellxps15.jpg" width="400" height="300" >
+  </p>
+</div>
+<div class="index"> 
+  <p style="float:left; color:black;"> <img src="nintendoswitch.jpg" width="500" height="300" >
+  </p>
+</div>
+<br>
+<div class="index">
+  <p style="text-align:center; color:black;"> <img src="bose.jpg" width="300" height="300" >
+  </p>
+</div>
+</body>
+    
+</html>

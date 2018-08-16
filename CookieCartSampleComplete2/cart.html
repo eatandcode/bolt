@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Checkout</title>
+<style>
+td{text-align:right;}
+</style>
+<script language="javascript" src="cookiemngr.js" ></script>
+<script type="text/javascript" src="pricing.js"></script>
+<script type="text/javascript">
+function cart()
+{
+	var total=0;
+	for(var i=0;i<items.length;i++)
+	{
+		qty=parseInt(getCookie(items[i]));
+		//alert(parseInt(qty));
+		if(!isNaN(qty))
+		{   
+			var itemqtyname=items[i]+"qty";
+			var cost=prices[i];
+			subtotal=prices[i]*qty;
+			total=total+subtotal;
+			document.writeln("<tr><td>",items[i],"</td><td>");
+			document.writeln("<input type='text' value='",qty,"' id='",itemqtyname,"' maxlength='2' size='2'/>");
+			document.writeln("<input type='button' value='update' id='",items[i],"' onclick='updateqty(this)';/>");
+			document.writeln("</td><td>");
+			document.writeln(cost);
+			document.writeln("</td><td>");
+			document.writeln(subtotal);
+			document.writeln("</td></tr>");
+		}
+   }
+   if(total !=0 ) 
+   {   
+	document.writeln("<tr><td colspan='3' >SUBTOTAL</td><td>");
+	document.writeln(total);
+	document.writeln("</td></tr>"); 
+   } 
+}
+
+function updateqty(item)
+{
+	var days=30;
+	itemid=item.id+"qty"
+	var newqty=parseInt(document.getElementById(itemid).value);
+	if (newqty==0) days=-1;
+	alert(newqty+":"+days);
+	setCookie(item.id,newqty,days);
+	location.reload();
+	location.href="cart.html";
+} 
+</script>
+</head>
+<body>
+<table>
+<tr><td>NAME</td><td>QTY</td><td>COST</td><td>SUBTOTAL</td></tr>
+<script type="text/javascript">
+cart();
+</script>
+</table>
+<a href="products.html">Back to Shopping</a>&nbsp;<a href="checkout.html">Checkout</a>
+</body>
+</html>

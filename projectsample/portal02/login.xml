@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<logins>
+
+  <login>
+    <id>1</id>
+    <username>johndoe</username>
+    <password>jd123</password>
+  </login>
+  
+  <login>
+    <id>2</id>
+    <username>janedoe</username>
+    <password>jddj123</password>
+  </login>
+ 
+  
+</logins>

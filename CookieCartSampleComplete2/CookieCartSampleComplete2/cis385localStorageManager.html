@@ -1,0 +1,105 @@
+<html>
+<head>
+<style type="text/css">
+table,td,input[type="button"],input[type="text"]{border:solid black 2px;font-size:small;}
+.division{border:solid black 2px;background-color:#CCCCCC;margin:2px;padding:1px;font-size:small;}
+th{text-align:center;background:black; color:white;padding:4px;}
+div.v0{ width:100%;}
+div.v1{ width:60%; margin:0px auto; background-color:#EEEEEE;}
+</style>
+<script type-'text/javascript'>
+function setLocalStorage(name,value,days)
+{
+	localStorage.setItem(name, value);
+} 
+function getLocalStorage(name)
+{
+	return localStorage.getItem(name);
+}
+function getraw()
+{
+	var i,str="";
+	for (i = 0; i < localStorage.length; i++) 
+	{
+		var name=localStorage.key(i);
+		var value=localStorage.getItem(localStorage.key(i));
+		str=str+name+"="+value+";";
+    }
+    return str;
+}
+function delLocalStorage(name)
+{
+	 localStorage.removeItem(name);
+}
+function delAllLocalStorage()
+{
+	localStorage.clear();
+}
+//-----------------------------------------------------------------
+function create()
+{
+	var days=1;
+	var cname=document.getElementById("cname");
+	var cvalue=document.getElementById("cvalue");
+	setLocalStorage(cname.value,cvalue.value,days);
+}
+function delete1()
+{
+	var cname3=document.getElementById("cname3");  
+	delLocalStorage(cname3.value);
+}
+function raw(){ document.getElementById("raw").value=getraw();}
+function findLocalStorage()
+{
+	var finditem=document.getElementById("cname2").value;
+	document.getElementById('cvalue2').value=getLocalStorage(finditem);
+}
+function details()
+{
+	var cookievalue="",str=getraw();
+	var A=str.split(";");
+	var x="<table style='width:50%;'><tr><th colspan='2'>LOCAL STORAGE</th></tr>";
+	x+="<tr><th>NAME</th><th>VALUE</th></tr>";
+	if(localStorage.length !=0)
+	for(var i=0;i<A.length-1;i++)
+	{
+		var B=A[i].split("=");
+		x+="<tr><td style='width:10;'>"+B[0]+"</td><td style='width:10;'>"+B[1]+"</td></tr>";
+	}
+	x+="</table>";
+	document.getElementById('info').innerHTML=x;
+}
+function clearbox(idname){document.getElementById(idname).value="";}
+</script>
+<title>LocalStorage MANAGER</title>
+</head>
+<body onload="details()">
+<div class="v0"><div class="v1">
+	<div class="division" style="font-size:1.5em;text-align:center;background:black; color:white;">LOCAL STORAGE MANAGER</div>
+	<div class="division">
+		Name:<input id="cname" type="text"size="10">
+		Value: <input id="cvalue" type="text"size="10">
+		<input type="button"value="setLocalStorage"onclick="create();details()"/>
+		<input type="button"value="Clear" onclick="clearbox('cname');clearbox('cvalue');"/>
+	</div>
+	<div class="division">
+		Name:<input id="cname2" type="text"size="10">
+		Value: <input id="cvalue2" type="text"size="10">
+		<input type="button" value="getLocalStorage" onclick="findLocalStorage()"/>
+		<input type="button"value="Clear" onclick="clearbox('cname2');clearbox('cvalue2');"/>
+	</div>
+	<div class="division">
+		Name:<input id="cname3" type="text" size="10">
+		<input type="button"value="delLocalStorage" onclick="delete1();details();"/>
+		<input type="button"value="Clear" onclick="clearbox('cname3');"/>
+	</div>
+	<div class="division">
+		<input id="raw" type="text" size="35">
+		<input type="button" value="getAllLocalStorage" onClick="raw();details();"/>
+		<input type="button" value="delAllLocalStorage" onClick="delAllLocalStorage();details();"/>
+		<input type="button"value="Clear"onclick="clearbox('raw');"/>
+	</div>
+	
+<div id='info' class="division"></div>
+</body> 
+</html>
